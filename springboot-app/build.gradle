@@ -2,22 +2,20 @@
 buildscript {
     repositories {
         mavenLocal()
-        maven { url "https://digital.artifacts.nz.thenational.com/repository/digital-maven" }
-        maven { url "https://digital.artifacts.nz.thenational.com/repository/gradle-plugins" }
+        maven { url "https://repo1.maven.org/maven2/" }
     }
 }
 
 
 plugins {
-//    id 'org.springframework.boot' version '2.4.4'
+    id 'org.springframework.boot' version '2.4.4'
     id 'java'
 }
 
 
 repositories {
     mavenLocal()
-    maven { url "https://digital.artifacts.nz.thenational.com/repository/digital-maven" }
-    maven { url "https://digital.artifacts.nz.thenational.com/repository/gradle-plugins" }
+    maven { url "https://repo1.maven.org/maven2/" }
 }
 
 dependencies {

@@ -1,8 +1,14 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
 !**/src/main/**/target/
 !**/src/test/**/target/
+!src/**/build/
+
+.gradle
+**/build/
+
+!gradle-wrapper.jar
 
 **/build
 
