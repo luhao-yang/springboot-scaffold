@@ -12,6 +12,7 @@ a template project to bootstrap a springboot project
 - validation
 - database operations
 - messaging(kafka)
+- Email
 - api calls(server to server)
 - soap calls(server to server)
 - OAuth?
