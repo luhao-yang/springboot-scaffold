@@ -1,4 +1,4 @@
-package luhaoyang.springbootscaffold.controller;
+package springboot.scaffold.controller;
 
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,11 +22,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.google.common.hash.Hashing;
 
-import luhaoyang.springbootscaffold.entity.User;
-import luhaoyang.springbootscaffold.requestDTO.UserRequestDTO;
-import luhaoyang.springbootscaffold.responseDTO.UserResponseDTO;
-import luhaoyang.springbootscaffold.service.UserService;
-import luhaoyang.springbootscaffold.util.MapperUtil;
+import springboot.scaffold.entity.User;
+import springboot.scaffold.requestDTO.UserRequestDTO;
+import springboot.scaffold.responseDTO.UserResponseDTO;
+import springboot.scaffold.service.UserService;
+import springboot.scaffold.util.MapperUtil;
 
 @RestController
 @RequestMapping("/users")

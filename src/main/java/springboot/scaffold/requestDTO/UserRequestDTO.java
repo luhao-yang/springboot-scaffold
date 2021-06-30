@@ -1,4 +1,4 @@
-package luhaoyang.springbootscaffold.requestDTO;
+package springboot.scaffold.requestDTO;
 
 import lombok.Data;
 

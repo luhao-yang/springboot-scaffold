@@ -1,13 +1,14 @@
-package luhaoyang.springbootscaffold.service;
+package springboot.scaffold.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import luhaoyang.springbootscaffold.entity.User;
-import luhaoyang.springbootscaffold.repository.UserRepository;
+import springboot.scaffold.entity.User;
+import springboot.scaffold.repository.UserRepository;
 
 @Service
 public class UserService {
@@ -20,7 +21,7 @@ public class UserService {
     }
 
     public User getUserById(int id) {
-        var optional = userRepository.findById(id);
+        Optional<User> optional = userRepository.findById(id);
         return optional.orElse(null);
     }
 

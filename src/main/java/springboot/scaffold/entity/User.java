@@ -1,4 +1,4 @@
-package luhaoyang.springbootscaffold.entity;
+package springboot.scaffold.entity;
 
 import java.time.LocalDateTime;
 

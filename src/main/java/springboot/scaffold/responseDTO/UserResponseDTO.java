@@ -1,4 +1,4 @@
-package luhaoyang.springbootscaffold.responseDTO;
+package springboot.scaffold.responseDTO;
 
 import java.time.LocalDateTime;
 

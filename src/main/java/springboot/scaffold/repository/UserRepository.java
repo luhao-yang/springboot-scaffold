@@ -1,8 +1,8 @@
-package luhaoyang.springbootscaffold.repository;
+package springboot.scaffold.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import luhaoyang.springbootscaffold.entity.User;
+import springboot.scaffold.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 

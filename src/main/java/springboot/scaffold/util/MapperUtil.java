@@ -1,4 +1,4 @@
-package luhaoyang.springbootscaffold.util;
+package springboot.scaffold.util;
 
 import java.util.List;
 import java.util.stream.Collectors;

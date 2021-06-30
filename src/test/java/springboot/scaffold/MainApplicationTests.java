@@ -1,10 +1,10 @@
-package luhaoyang.springbootscaffold;
+package springboot.scaffold;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootScaffoldApplicationTests {
+class MainApplicationTests {
 
 	@Test
 	void contextLoads() {
