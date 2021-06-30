@@ -1,7 +1,29 @@
 
-apply plugin: 'application'
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "https://digital.artifacts.nz.thenational.com/repository/digital-maven" }
+        maven { url "https://digital.artifacts.nz.thenational.com/repository/gradle-plugins" }
+    }
+}
+
+
+plugins {
+//    id 'org.springframework.boot' version '2.4.4'
+    id 'java'
+}
+
+
+repositories {
+    mavenLocal()
+    maven { url "https://digital.artifacts.nz.thenational.com/repository/digital-maven" }
+    maven { url "https://digital.artifacts.nz.thenational.com/repository/gradle-plugins" }
+}
 
 dependencies {
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
     implementation 'org.modelmapper:modelmapper:2.4.2'
     implementation 'org.projectlombok:lombok:1.18.18'
     implementation 'com.google.guava:guava:30.1.1-jre'
