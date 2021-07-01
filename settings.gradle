@@ -3,3 +3,5 @@
  */
 
 rootProject.name = 'demo-project'
+
+include 'springboot-app'
