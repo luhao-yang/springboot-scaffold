@@ -9,8 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.TableGenerator;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Data
 @Entity
 public class User {
@@ -23,8 +29,5 @@ public class User {
     private String email;
     private String password;
     private LocalDateTime registerAt;
-
-    public User() {
-    }
 
 }

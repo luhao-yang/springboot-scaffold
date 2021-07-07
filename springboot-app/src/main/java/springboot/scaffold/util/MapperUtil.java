@@ -15,7 +15,7 @@ public class MapperUtil {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
     }
 
-    static  public <S, T> List<T> mapList(List<S> source, Class<T> targetClass) {
+    static public <S, T> List<T> mapList(List<S> source, Class<T> targetClass) {
         return source
                 .stream()
                 .map(element -> modelMapper.map(element, targetClass))

@@ -3,21 +3,17 @@ package springboot.scaffold.controller;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.google.common.hash.Hashing;
@@ -30,17 +26,15 @@ import springboot.scaffold.util.MapperUtil;
 
 @RestController
 @RequestMapping("/users")
+@Slf4j
 public class UserController {
-
-    private Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     private UserService userService;
 
-
-    @GetMapping("/")
-    public List<UserResponseDTO> getAllUsers() {
-        List<User> users = userService.getUsers();
+    @GetMapping("")
+    public List<UserResponseDTO> getAllUsers(@RequestParam Map<String, String> params) {
+        List<User> users = userService.getUsers(params);
         return MapperUtil.mapList(users, UserResponseDTO.class);
     }
 
@@ -61,7 +55,9 @@ public class UserController {
         ModelMapper modelMapper = new ModelMapper();
         User user = modelMapper.map(userRequestDTO, User.class);
 
-        user.setPassword(Hashing.sha256().hashString(userRequestDTO.getPassword(), StandardCharsets.UTF_8).toString());
+        String saltedPasswd = Hashing.sha256().hashString(userRequestDTO.getPassword(), StandardCharsets.UTF_8).toString();
+        log.info("salted passwd: " +saltedPasswd);
+        user.setPassword(saltedPasswd);
         user.setRegisterAt(LocalDateTime.now());
         userService.saveUser(user);
 
