@@ -1,4 +1,4 @@
-package springboot.scaffold.requestDTO;
+package springboot.scaffold.app.requestDTO;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package springboot.scaffold.util;
+package springboot.scaffold.app.util;
 
 import java.util.List;
 import java.util.stream.Collectors;

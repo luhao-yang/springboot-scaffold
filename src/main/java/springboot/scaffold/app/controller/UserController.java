@@ -1,28 +1,23 @@
-package springboot.scaffold.controller;
+package springboot.scaffold.app.controller;
 
-import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
+import com.google.common.hash.Hashing;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
-import com.google.common.hash.Hashing;
-
-import springboot.scaffold.entity.User;
-import springboot.scaffold.requestDTO.UserRequestDTO;
+import springboot.scaffold.app.entity.User;
+import springboot.scaffold.app.requestDTO.UserRequestDTO;
+import springboot.scaffold.app.service.UserService;
+import springboot.scaffold.app.util.MapperUtil;
 import springboot.scaffold.responseDTO.UserResponseDTO;
-import springboot.scaffold.service.UserService;
-import springboot.scaffold.util.MapperUtil;
+
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/users")
